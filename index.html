@@ -118,15 +118,6 @@
             $("#show").on("click", function() {
                 $("#roadmap").css("display", "block")
             })
-            $(document).ready(function() {
-                $('.template-article img').each(function() {
-                    var currentImage = $(this);
-                    currentImage.wrap("<a class='image-link' href='" + currentImage.attr("src") + "'</a>");
-                });
-                $('.image-link').magnificPopup({
-                    type: 'image'
-                });
-            });
         </script>
         <div id="roadmap" style="display:none;">
             <img width="auto" height="30%" padding="25%" src="https://iili.io/BPidba.png">

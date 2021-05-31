@@ -49,7 +49,8 @@
             color: black;
         }
         
-        img {
+        img #roadmap {
+            position: relative;
             border-radius: 5px;
             border-style: solid;
             border-width: 1px;
@@ -58,7 +59,7 @@
         }
         
         @media screen and (max-width: 600px) {
-            img {
+            img #roadmap {
                 padding: 0%;
                 width: auto;
                 height: 23%;
@@ -66,25 +67,26 @@
         }
         
         p {
-            align: left;
             font-size: 12px;
             opacity: 35%;
         }
         
         h3 {
-            font-size: 16px;
+            font-size: 14px;
             opacity: 50%;
         }
         
         button {
             border: none;
-            color: #474747;
+            color: white;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
             background-color: black !important;
+            border-radius: 3px;
+            margin-bottom: 3px;
         }
         
         button:hover {
@@ -101,15 +103,13 @@
     <center>
 
         <h1>snitch</h1>
-        <h3>coming soon...</h3>
+        <h3>coming soon</h3>
         <p> Anonymous Crime Reporting
             <br> Autonomous, Immutable, Decentralized </p>
 
 
 
-        <div id="roadmap" style="display:none;">
-            <img width="auto" height="30%" padding="25%" src="https://iili.io/BPidba.png">
-        </div>
+
         <div id="background" width="100%">
             <img id="logo" style="padding:0;margin:0;" class="next-particle" data-color="#000" src="https://iili.io/BSLXoB.png" data-init-position="top" data-init-direction="top" data-fade-position="top" data-fade-direction="top">
         </div>
@@ -118,11 +118,25 @@
             $("#show").on("click", function() {
                 $("#roadmap").css("display", "block")
             })
+            $(document).ready(function() {
+                $('.template-article img').each(function() {
+                    var currentImage = $(this);
+                    currentImage.wrap("<a class='image-link' href='" + currentImage.attr("src") + "'</a>");
+                });
+                $('.image-link').magnificPopup({
+                    type: 'image'
+                });
+            });
         </script>
+        <div id="roadmap" style="display:none;">
+            <img width="auto" height="30%" padding="25%" src="https://iili.io/BPidba.png">
+        </div>
         <p>We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness... whenever any Form of Government
             becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely
             to effect their Safety and Happiness.</p>
         <p><b>Thomas Jefferson - July 4, 1776</b></p>
+        <a href="https://discord.gg/QkAZJdAhFz"> <img width="25%" src="https://cdn1.iconfinder.com/data/icons/computer-techologies-outline-free/128/ic_discord_logo-512.png"></img>
+        </a>
 
     </center>
 

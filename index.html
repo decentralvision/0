@@ -3,17 +3,21 @@
 <head>
     <title>snitch</title>
     <link rel="shortcut icon" type="image/png" href="https://iili.io/BSLXoB.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style>
         body {
             color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #474747;
             margin: 0;
-            padding: 0;
+            padding: 5px;
         }
         
-        #background,
         #logo {
             display: block;
             position: fixed;
@@ -33,7 +37,6 @@
         
         #roadmap {
             overflow: clip;
-            background-color: rgba(0, 0, 0, 0.3);
         }
         
         h1,
@@ -47,17 +50,18 @@
         }
         
         img {
-            border-radius: 0px;
+            border-radius: 5px;
             border-style: solid;
-            border-width: 1px 0 1px 0;
+            border-width: 1px;
             border-color: grey;
+            background-color: rgba(0, 0, 0, 0.3);
         }
         
         @media screen and (max-width: 600px) {
             img {
                 padding: 0%;
                 width: auto;
-                height: 10%;
+                height: 23%;
             }
         }
         
@@ -72,44 +76,56 @@
             opacity: 50%;
         }
         
-        canvas {
-            display: block;
-            vertical-align: bottom;
+        button {
+            border: none;
+            color: #474747;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            background-color: black !important;
         }
         
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: $background
+        button:hover {
+            background-color: white !important;
+            color: black;
         }
     </style>
 
 </head>
-<div id="particles-js"></div>
+
 
 <body>
 
     <center>
-        <header>
-            <h1>snitch</h1>
-            <h3>coming soon...</h3>
-            <p> Anonymous Crime Reporting
-                <br> Autonomous, Immutable, Decentralized </p>
 
-        </header>
+        <h1>snitch</h1>
+        <h3>coming soon...</h3>
+        <p> Anonymous Crime Reporting
+            <br> Autonomous, Immutable, Decentralized </p>
 
-        <img id="roadmap" width="auto" height="20%" padding="25%" src="https://iili.io/BPidba.png">
 
-        <div id="background" width="100%">
-            <img id="logo" data-width="100%" style="padding:0;margin:0;" class="next-particle" data-color="#000" src="https://iili.io/BSLXoB.png" data-init-position="top" data-init-direction="top" data-fade-position="top" data-fade-direction="top">
+
+        <div id="roadmap" style="display:none;">
+            <img width="auto" height="30%" padding="25%" src="https://iili.io/BPidba.png">
         </div>
-
+        <div id="background" width="100%">
+            <img id="logo" style="padding:0;margin:0;" class="next-particle" data-color="#000" src="https://iili.io/BSLXoB.png" data-init-position="top" data-init-direction="top" data-fade-position="top" data-fade-direction="top">
+        </div>
+        <button id="show">View Roadmap</button>
+        <script>
+            $("#show").on("click", function() {
+                $("#roadmap").css("display", "block")
+            })
+        </script>
         <p>We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness... whenever any Form of Government
             becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely
             to effect their Safety and Happiness.</p>
         <p><b>Thomas Jefferson - July 4, 1776</b></p>
+
     </center>
+
 
     <script>
         "use strict";
@@ -529,10 +545,7 @@
             nextParticle.start();
         };
     </script>
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 
-    <script src="components.js"></script>
 </body>
 
 

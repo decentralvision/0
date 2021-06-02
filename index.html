@@ -45,7 +45,7 @@
             -webkit-text-stroke-width: 2px;
             -webkit-text-stroke-color: linear-gradient(0deg, rgba(120, 120, 120, 0) 0%, rgba(255, 255, 255, 0.3) 50%);
             margin: 0;
-            opacity: 40%;
+            opacity: 60%;
             color: black;
         }
         
@@ -68,7 +68,7 @@
         
         p {
             font-size: 12px;
-            opacity: 35%;
+            opacity: 25%;
         }
         
         h3 {
@@ -76,7 +76,8 @@
             opacity: 50%;
         }
         
-        button {
+        button,
+        input[type=submit] {
             border: none;
             color: white;
             padding: 15px 32px;
@@ -85,11 +86,12 @@
             display: inline-block;
             font-size: 16px;
             background-color: black !important;
-            border-radius: 3px;
+            border-radius: 0px;
             margin-bottom: 3px;
         }
         
-        button:hover {
+        button:hover,
+        input[type=submit]:hover {
             background-color: white !important;
             color: black;
         }
@@ -113,19 +115,58 @@
         <div id="background" width="100%">
             <img id="logo" style="padding:0;margin:0;" class="next-particle" data-color="#000" src="https://iili.io/BSLXoB.png" data-init-position="top" data-init-direction="top" data-fade-position="top" data-fade-direction="top">
         </div>
-        <button id="show">View Roadmap</button>
+        <button id="show">Roadmap</button>
         <script>
             $("#show").on("click", function() {
-                $("#roadmap").css("display", "block")
+                $("#roadmap").css("display") == "block" ? $("#roadmap").css("display", "none") : $("#roadmap").css("display", "block")
             })
         </script>
         <div id="roadmap" style="display:none;">
             <img width="auto" height="30%" padding="25%" src="https://iili.io/BPidba.png">
         </div>
+
         <p>We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness... whenever any Form of Government
             becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely
             to effect their Safety and Happiness.</p>
         <p><b>Thomas Jefferson - July 4, 1776</b></p>
+
+        <!-- Begin Mailchimp Signup Form -->
+        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            #mc_embed_signup {
+                background: rgba(0, 0, 0, 0);
+                width: 100%;
+                color: grey;
+            }
+            
+            input,
+            label {
+                display: block;
+                width: 25%;
+                border-radius: 1px !important;
+                border-color: rgba(0, 0, 0, 0.01)
+            }
+            
+            input {
+                border-style: solid;
+            }
+            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+        <div id="mc_embed_signup">
+            <form action="https://gmail.us1.list-manage.com/subscribe/post?u=a2c9ebd8d7b8f829909f602ef&amp;id=c15cd1c583" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                    <label style="color: black; padding-bottom:5px;display:none;" for="mce-EMAIL">News</label>
+                    <input style="border-radius:5px;width:25%;" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="username@domain.tld" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a2c9ebd8d7b8f829909f602ef_c15cd1c583" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+            </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+
         <a href="https://discord.gg/QkAZJdAhFz"> <img width="25%" src="https://cdn1.iconfinder.com/data/icons/computer-techologies-outline-free/128/ic_discord_logo-512.png"></img>
         </a>
 
